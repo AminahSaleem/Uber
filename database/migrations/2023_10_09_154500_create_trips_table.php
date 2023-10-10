@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\User;
+use App\Models\Driver;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -20,7 +22,7 @@ return new class extends Migration
             $table->json('origin')->nullable();
             $table->json('destination')->nullable();
             $table->string('destination_name')->nullable();
-            $table->json('dirver_location')->nullable();
+            $table->json('driver_location')->nullable();
             $table->timestamps();
         });
     }
