@@ -23,5 +23,14 @@ class User extends Authenticatable
         'password',
     ];
 
+    public function driver()
+    {
+        return $this->hasOne(Driver::class);
+    }
+
+    public function trips()
+    {
+        return $this->hasMany(Trip::class);
+    }
  
 }
