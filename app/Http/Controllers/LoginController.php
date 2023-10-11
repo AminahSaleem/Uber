@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Notifications\LoginNeedsVerification;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -19,7 +20,9 @@ class LoginController extends Controller
         if (!$user) {
             return response()->json(['message' => 'Could not process a user with that phone number.'], 401);
         }
-        // send the suer a one time code 
-        $user->notify();
+        // send the user a one time code 
+        $user->notify(new LoginNeedsVerification());
+
+        //return a response
     }
 }
