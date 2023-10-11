@@ -12,5 +12,12 @@ class LoginController extends Controller
         $request->validate([
             'phone' => 'required|numeric|min:10'
         ]);
+        // find or create a user model 
+        $user = User::firstOrCreate([
+            'phone' => $request->phone
+        ]);
+        if (!$user) {
+            return response()->json(['message' => 'Could not process a user with that phone number.'], 401)
+        }
     }
 }
