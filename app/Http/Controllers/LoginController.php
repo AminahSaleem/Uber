@@ -44,6 +44,9 @@ class LoginController extends Controller
         //is the code provided the same one as saved?
 
         // if so, return back an auth token
+        if ($user) {
+            return $user->createToken($request->login_code)->plainTextToken
+        }
 
         // if not, return back a message
     }
