@@ -47,7 +47,8 @@ class LoginController extends Controller
         if ($user) {
             $user->update([
                'login_code' => null 
-            ])
+            ]);
+            
             return $user->createToken($request->login_code)->plainTextToken;
         }
 
