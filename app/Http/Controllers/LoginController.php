@@ -27,4 +27,22 @@ class LoginController extends Controller
         //return a response
         return response()->json(['message' => 'Text message notification sent.']);
     }
+
+    public function verify(Request $request)
+    {
+        // validate the incoming request
+        $request->validate([
+            'phone' => 'required|numeric\min:10',
+            'login_code' => 'required|numeric|between:111111,999999'
+        ]);
+
+        //find the user
+        
+
+        //is the code provided the same one as saved?
+
+        // if so, return back an auth token
+
+        // if not, return back a message
+    }
 }
