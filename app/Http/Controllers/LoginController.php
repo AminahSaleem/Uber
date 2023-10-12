@@ -37,7 +37,9 @@ class LoginController extends Controller
         ]);
 
         //find the user
-        
+        $user = User::where('phone', $request->phone)
+        ->where('login_code', $request->login_code)
+        ->first();
 
         //is the code provided the same one as saved?
 
