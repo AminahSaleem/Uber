@@ -32,7 +32,7 @@ class LoginController extends Controller
     {
         // validate the incoming request
         $request->validate([
-            'phone' => 'required|numeric\min:10',
+            'phone' => 'required|numeric|min:10',
             'login_code' => 'required|numeric|between:111111,999999'
         ]);
 
