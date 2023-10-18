@@ -12,5 +12,10 @@ class TripController extends Controller
             'destination' => 'required',
             'destination_name' => 'required',
         ]);
+        return $request->user()->trips()->create($request->only([
+            'origin',
+            'destination',
+            'destination_name'
+        ]))
     }
 }
