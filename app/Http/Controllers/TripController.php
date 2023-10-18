@@ -25,6 +25,10 @@ class TripController extends Controller
         if ($trip->user->id === $request->user()->id) {
             return $trip;
         }
+        if ($trip->driver->id === $request->user()->driver->id)
+        {
+            return $trip;
+        }
         return $trip;
     }
 }
