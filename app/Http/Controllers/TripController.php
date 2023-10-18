@@ -77,6 +77,9 @@ class TripController extends Controller
     public function location(Request $request, Trip $trip)
     {
         // update the drivers current location 
+        $request->validate([
+            'driver_location' => 'required'
+        ]);
         $trip->update([
             'driver_location' => $request->driver_location
         ]);
