@@ -50,11 +50,18 @@ class TripController extends Controller
         ]);
         $trip->load('driver.user');
         
-        return $trip 
+        return $trip;
     }
     public function start(Request $request, Trip $trip)
     {
         // a driver has started taking a passenger to their destination
+        $trip->update([
+            'is_started' => true
+        ]);
+
+        $trip->load('driver.user');
+        
+        return $trip;
     }
     public function end(Request $request, Trip $trip)
     {
