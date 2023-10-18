@@ -83,5 +83,7 @@ class TripController extends Controller
         $trip->update([
             'driver_location' => $request->driver_location
         ]);
+        $trip->load('driver.user');
+        return $trip;
     }
 }
