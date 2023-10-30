@@ -1,12 +1,9 @@
 {
     "private": true,
     "type": "module",
-    "main": "listen.js",
     "scripts": {
         "dev": "vite",
-        "build": "vite build",
-        "start": "node listen.js",
-        "seed-prod": "NODE_ENV=production npm run seed"
+        "build": "vite build"
     },
     "devDependencies": {
         "axios": "^1.1.2",
@@ -14,6 +11,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "cors": "^2.8.5",
         "dotenv": "^16.3.1",
         "pg": "^8.11.3",
         "php": "^1.0.2"
