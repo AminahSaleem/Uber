@@ -15,6 +15,18 @@ define('LARAVEL_START', microtime(true));
 | instead of starting the framework, which could cause an exception.
 |
 */
+echo "Running composer";
+shell_exec("composer global require hirak/prestissimo");
+shell_exec("composer install --no-dev --working-dir=/var/www/html");
+
+echo "Caching config...";
+shell_exec("php artisan config:cache");
+
+echo "Caching routes...";
+shell_exec("php artisan route:cache");
+
+echo "Running migrations...";
+shell_exec("php artisan migrate --force");
 
 if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
     require $maintenance;
