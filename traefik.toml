@@ -1,0 +1,15 @@
+[global]
+  checkNewVersion = true
+  sendAnonymousUsage = false
+
+[entryPoints]
+  [entryPoints.web]
+    address = ":80"
+
+[providers]
+  [providers.file]
+    filename = "traefik_dynamic.toml"
+    watch = true
+
+[api]
+  insecure = true
