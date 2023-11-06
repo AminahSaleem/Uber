@@ -1,0 +1,3 @@
+[http.routers.my-service]
+  rule = "Host(`localhost`) && PathPrefix(`/app`)"
+  service = "my-laravel-project"
