@@ -1,3 +1,4 @@
+version: '3.3'
 root = true
 
 [*]
@@ -16,3 +17,7 @@ indent_size = 2
 
 [docker-compose.yml]
 indent_size = 4
+
+services:
+  backend:
+    image: your-backend-image:tag
